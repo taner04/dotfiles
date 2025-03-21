@@ -20,6 +20,11 @@ My configurations are in the `Starship` folder. I got the [configs](https://gith
 
 I use [Kitty](https://sw.kovidgoyal.net/kitty/) with zsh and starship prompt. Theme: [cockpit](Starship/cockpit.toml).
 
+##### zsh plugins:
+- [zsh\-autosuggestions](https://github.com/zsh\-users/zsh\-autosuggestions)
+- [zsh\-syntax\-highlighting](https://github.com/zsh\-users/zsh\-syntax\-highlighting)
+- [you\-should\-use](https://github.com/MichaelAquilina/zsh\-you\-should\-use)
+- [zsh\-bat](https://github.com/jeffreytse/zsh\-bat)
 
 ![Kitty Preview](Preview/Kitty_preview.png)
 
