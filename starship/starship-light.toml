@@ -1,0 +1,118 @@
+# Light
+# Left: who/where. Right: git, languages, timing. Brackets group each part.
+
+format = '''[╭─](fg:line) $username$directory$fill($git_branch$git_metrics[\]](fg:bracket))$nodejs$cpp$c$python$conda$cmd_duration$time
+[╰─](fg:line)$character'''
+
+add_newline = true
+
+palette = 'koda_light'
+
+[palettes.koda_light]
+text         = '#1c1c1c'
+red          = '#9a5252'
+color_pink   = '#0a0a0a'
+color_blue   = '#2a2a2a'
+color_yellow = '#3a3a3a'
+color_aqua   = '#5a5a5a'
+color_green  = '#4f7050'
+color_red    = '#9a5252'
+color_orange = '#7f6e30'
+line         = '#bdbdbd'
+bracket      = '#a8a8a8'
+
+[fill]
+symbol = ' '
+
+[os]
+disabled = true
+format = '[$symbol ](fg:color_pink bold)'
+
+[os.symbols]
+Windows = ""
+Ubuntu = ""
+Debian = ""
+Arch = ""
+Manjaro = ""
+Linux = ""
+Macos = ""
+Unknown = ""
+
+[username]
+show_always = true
+format = '[\[](fg:bracket)[$user]($style)[\]](fg:bracket)'
+style_user = 'fg:text bold'
+style_root = 'fg:red bold'
+
+[directory]
+format = ' [\[](fg:bracket)[ $path]($style)[$read_only]($read_only_style)[\]](fg:bracket)'
+style = 'fg:color_blue bold'
+read_only = ' '
+read_only_style = 'fg:color_red'
+truncation_length = 0
+truncation_symbol = '…/'
+truncate_to_repo = false
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music"     = " "
+"Pictures"  = " "
+
+[git_branch]
+symbol = ''
+format = ' [\[](fg:bracket)[$symbol $branch](fg:color_yellow)'
+
+[git_metrics]
+disabled = false
+format = '( [+$added]($added_style))( [-$deleted]($deleted_style))'
+added_style = 'fg:color_green'
+deleted_style = 'fg:color_red'
+
+[git_status]
+disabled = true
+
+[git_commit]
+disabled = true
+
+[nodejs]
+symbol = ' '
+version_format = 'v${major}.${minor}'
+format = ' [\[](fg:bracket)[$symbol$version](fg:color_green)[\]](fg:bracket)'
+
+[dotnet]
+disabled = true
+
+[cpp]
+disabled = false
+symbol = ' '
+version_format = 'v${major}.${minor}'
+format = ' [\[](fg:bracket)[$symbol$version](fg:color_aqua)[\]](fg:bracket)'
+
+[c]
+symbol = ' '
+version_format = 'v${major}.${minor}'
+format = ' [\[](fg:bracket)[$symbol$version](fg:color_aqua)[\]](fg:bracket)'
+
+[python]
+symbol = ' '
+version_format = 'v${major}.${minor}'
+format = ' [\[](fg:bracket)[$symbol$version( \($virtualenv\))](fg:color_yellow)[\]](fg:bracket)'
+
+[conda]
+symbol = ' '
+format = ' [\[](fg:bracket)[$symbol$environment](fg:color_green)[\]](fg:bracket)'
+
+[cmd_duration]
+min_time = 2000
+format = ' [\[](fg:bracket)[ $duration](fg:color_orange)[\]](fg:bracket)'
+
+[time]
+disabled = false
+time_format = '%R'
+format = ' [\[](fg:bracket)[ $time](fg:color_aqua)[\]](fg:bracket)'
+
+[character]
+format = '$symbol '
+success_symbol = '[](fg:text bold)'
+error_symbol = '[](fg:red bold)'

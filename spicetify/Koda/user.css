@@ -1,0 +1,63 @@
+/* Koda: small tweaks on top of color.ini. Uses Spotify's CSS variables so it survives updates. */
+
+:root {
+  --koda-border: var(--spice-border);
+}
+
+/* Font matching the terminal */
+body, input, button {
+  font-family: "JetBrainsMono Nerd Font", "JetBrains Mono", -apple-system, sans-serif !important;
+}
+
+/* Replace Spotify green accents with gray/white */
+:root,
+.encore-dark-theme,
+.encore-dark-theme .encore-base-set {
+  --background-base: var(--spice-main) !important;
+  --background-highlight: var(--spice-highlight) !important;
+  --background-press: var(--spice-highlight-elevated) !important;
+  --background-elevated-base: var(--spice-main-elevated) !important;
+  --background-elevated-highlight: var(--spice-highlight-elevated) !important;
+  --text-base: var(--spice-text) !important;
+  --text-subdued: var(--spice-subtext) !important;
+  --text-bright-accent: var(--spice-text) !important;
+  --essential-bright-accent: var(--spice-button) !important;
+  --decorative-base: var(--spice-text) !important;
+  --decorative-subdued: var(--koda-border) !important;
+}
+
+.encore-bright-accent-set {
+  --background-base: var(--spice-button) !important;
+  --background-highlight: var(--spice-button-active) !important;
+  --background-press: var(--spice-subtext) !important;
+  --text-base: var(--spice-on-button) !important;
+}
+
+/* Thin borders instead of heavy blocks */
+.Root__nav-bar,
+.Root__main-view,
+.Root__right-sidebar {
+  border: 1px solid var(--koda-border);
+}
+
+/* Slim, quiet scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-thumb { background: var(--spice-scroll); border-radius: 3px; }
+::-webkit-scrollbar-track { background: transparent; }
+
+/* Desaturate the gradient header behind playlists/albums */
+.main-entityHeader-backgroundColor,
+.main-actionBarBackground-background,
+.main-home-homeHeader {
+  filter: grayscale(1) !important;
+  opacity: 0.5;
+}
+
+/* Progress & volume bars: white on dark gray */
+.progress-bar {
+  --fg-color: var(--spice-text) !important;
+  --bg-color: var(--spice-scroll) !important;
+}
+.progress-bar:hover {
+  --fg-color: var(--spice-button-active) !important;
+}
